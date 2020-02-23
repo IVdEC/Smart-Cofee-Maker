@@ -64,7 +64,11 @@ Currently, ESP-EYE can enroll up to 10 Face IDs. Please note that the maximum nu
 
 - Se utilizan los pines Din y Cs, el primero como señal de salida y el segundo como tierra, el montaje que se realizó se muestra en la siguiente imagen.
 
-![ESP-EYE image](../Circuit.png)
+![Circuit image](../Circuit.png)
+
+- Se a utilizado, a parte de la ESP-EYE, dos resistencias con los valores indicados en la figura, un transistor 2N2222, una breadboard? y una cafetera Nespresso ? . Para que eché el café, se tienen que cortocircuitar los bornes del interruptor, que en este modelo de cafetera se ve en la siguiente imagen:
+
+![Switch image](../)
 
 #### Troubleshooting
 
@@ -72,4 +76,4 @@ The board returns to the "awaiting to be woken up" status when there are network
 
 #### Diagrama de flujo
 
-![ESP-EYE image](../Esp_cafetera_2.jpeg)
+![DF image](../Esp_cafetera_2.jpeg)
