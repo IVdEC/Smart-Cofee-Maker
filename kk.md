@@ -1,4 +1,0 @@
-fjaofhnafA,VL
-Puta
-
-que
