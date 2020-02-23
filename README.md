@@ -1,5 +1,6 @@
 # Smart-Cofee-Maker
 Using Face_Recognition example, to do a smart cofee maker with a Esp-Eye.
+\n
 Es necesario haber seguido las instrucciones del readme del siguiente repositorio:
 https://github.com/espressif/esp-who
 Para hacer que funcione el entorno de desarrollo para estos dos proyectos.
