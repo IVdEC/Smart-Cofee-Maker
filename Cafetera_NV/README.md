@@ -48,6 +48,42 @@ recognition.
 
 Currently, ESP-EYE can enroll up to 10 Face IDs. Please note that the maximum number of enrolled Face IDs can be configured according to how users allocate the flash memory. However, we recommend a number that is no greater than 30.
 
+#### 5 Use of peripherals
+
+- After adding the face to the "member list" the red LED will begin to flash for 10 seconds, at this time the user must decide what amount of coffee he wants to drink, in this version of the code there are 3 possibilities depending on how many times you have Pressed the side button of the ESP-EYE:
+
+	-Coffee short: Without pressing
+
+	-Medium coffee: One press
+
+	-Long coffee: Two presses
+
+- If the user has pressed more than twice the amount is reset to the minimum value (as if it had not been pressed).
+
+- When a face that is in the "member list" is recognized again, the amount of coffee that the user has preset will be taken.
+
+- The quantities of coffee are preset in a fixed time of 20, 40 and 60 seconds respectively, if you want to vary these times you should go to the app_httpserver.c file in the main folder and go to the coffeeteame function and change the vtask values at the time you want in milliseconds.
+
+- Din and Cs pins are used, the first as an output signal and the second as ground, the assembly that was made is shown in the following image.
+
+![Circuit image](../Circuit.png)
+
+- Have been used, apart from the ESP-EYE, two resistors with the values indicated in the figure, a transistor 2N2222, a breadboard? and a Nespresso coffee maker? . To pour the coffee, you have to short-circuit the terminals of the switch, which in this model of coffee maker is seen in the following image:
+
+![Switch image](../Inside.jpg)
+
+![Switch image](../Control_wires.jpg)
+
+#### Troubleshooting
+
+The board returns to the "awaiting to be woken up" status when there are network anomalies, such as "network disconnection" and "network timeout".
+
+#### Flowchart
+
+![DF image](../Esp_cafetera_2.jpeg)
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
 #### 5 Uso de periféricos
 
 - Después de añadir la cara a la "lista de miembros" el LED rojo comenzará a parpadear durante 10 segundos, en este tiempo el usuario debe decidir que cantidad de café quiere tomar, en esta versión del código hay 3 posibilidades dependiendo de cuantas veces has pulsado el botón lateral de la ESP-EYE:
