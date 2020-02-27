@@ -18,7 +18,7 @@ Alternatively, users can also follow the steps below to configure the username a
 - Launch your Terminal.
 - Run `make menuconfig` and complete the configuration, as instructed in the figure below:
 	
-	![wifi connection](../../../docs/_static/get-started/wifi_connection.jpeg)
+	![wifi connection](../Images/wifi_connection.jpeg)
 
 > Note: After reconfiguring the Wi-Fi username and password, you will have to restart from the point of downloading firmware.
 
@@ -39,7 +39,7 @@ recognition.
 
 #### 4 Add a Face ID
 
-![Enroll a Face ID](../../../docs/_static/get-started/face_id_enrollment_en.png)
+![Enroll a Face ID](../Images/face_id_enrollment_en.png)
 
 - Single-click the Side Tactile Button to enroll a new Face ID. At this point, the red LED is on and the browser displays **START ENROLLING**;
 - Once you put a face in front of the camera, the face-sampling starts automatically. The red LED flashes whenever the board gets a face sample and the browser displays the ordinal number of the current face sample, i.e. **THE 1st SAMPLE** etc. By default, the board has to take three samples to add one Face ID. Users can configure the number of samples needed for one Face ID. (Please adjust your position/distance from the camera and try again if you cannot see the red LED flashing for some time).
@@ -66,13 +66,13 @@ Currently, ESP-EYE can enroll up to 10 Face IDs. Please note that the maximum nu
 
 - Din and Cs pins are used, the first as an output signal and the second as ground, the assembly that was made is shown in the following image.
 
-![Circuit image](../Circuit.png)
+![Circuit image](../Images/Circuit.png)
 
 - Have been used, apart from the ESP-EYE, two resistors with the values indicated in the figure, a transistor 2N2222, a breadboard? and a Nespresso coffee maker? . To pour the coffee, you have to short-circuit the terminals of the switch, which in this model of coffee maker is seen in the following image:
 
-![Switch image](../Inside.jpg)
+![Switch image](../Images/Inside.jpg)
 
-![Switch image](../Control_wires.jpg)
+![Switch image](../Images/Control_wires.jpg)
 
 #### Troubleshooting
 
@@ -80,7 +80,7 @@ The board returns to the "awaiting to be woken up" status when there are network
 
 #### Flowchart
 
-![DF image](../Esp_cafetera_2.jpeg)
+![DF image](../Images/Esp_cafetera_2.jpeg)
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
