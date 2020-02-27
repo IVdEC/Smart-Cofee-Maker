@@ -1,24 +1,15 @@
-# Face Detection and Recognition with ESP-EYE
+# Smart cofee maker with voice to wake up
 
-This example demonstrates **Face Recognition** and **Voice Wakeup** with ESP-EYE.
-
-For hardware preparation, please see [HERE](../../../docs/en/get-started/ESP-EYE_Getting_Started_Guide.md)
-
-# Key Features
+## Key Features
 
 - Voice wakeup
 - Face detection
 - Face recognition
-
-# Key Process
-
-The figure below describes the workflow of ESP-EYE:
-
-![esp-eye-workflow](../../../docs/_static/get-started/work_flow_en.png)
+- GPIO managment
 
 #### 1. Voice Wake-up 
 
-ESP-EYE awaits to be woken up after powering up (Red LED on and white LED off). The board wakes up after recognizing the wake-up command "Hi Lexin" ([Ləsɪ:n]), and then awaits for networking (Red LED flashing and white LED off). Subsequently, users can initiate the networking.
+ESP-EYE awaits to be woken up after pour cofee or store a user (Red LED off and white LED on). The board wakes up after recognizing the wake-up command "Hi Lexin" ([Ləsɪ:n]), and then awaits to work. Subsequently, users can initiate the networking.
 
 >Note: If you want to download an audio clip of our wake-up command "Hi Lexin", please click [here](https://dl.espressif.com/dl/Hi_Lexin_wake-up_commend.wav).
 
@@ -28,7 +19,7 @@ ESP-EYE awaits to be woken up after powering up (Red LED on and white LED off). 
 Users can connect their PCs or mobile phones to ESP-EYE's Wi-Fi (by default), with the following information:
 
 - Username: esp-eye-xxxx (xxxx should be the board's MAC address)
-- Password: not needed
+- Password: esp_cafetera_19
 
 Alternatively, users can also follow the steps below to configure the username and password of the board's Wi-Fi connection:
 
@@ -41,7 +32,7 @@ Alternatively, users can also follow the steps below to configure the username a
 
 #### 3. Face Detection
 
-ESP-EYE starts the face detection after networking. Users can see the real-time image captured by the board, through their browser (address: `192.168.4.1/face_stream`). During this step, the red LED is off and the white LED is on.
+ESP-EYE starts the face detection after networking. Users can see the real-time image captured by the board, through their browser (address: `192.168.6.1/face_stream`). During this step, the red LED is off and the white LED is on.
 
 #### 4. Face Recognition
 
@@ -54,11 +45,7 @@ recognition if there are any enrolled Face IDs stored in the board:
 If there is no enrolled Face ID, the board continues the face-detecting process. You should enroll at least one Face ID if you want to start face 
 recognition.
 
-#### 5. Add/delete a Face ID
-
-The users can add/delete a Face ID after the network is successfully established.
-
-##### 5.1 Add a Face ID
+#### 4 Add a Face ID
 
 ![Enroll a Face ID](../../../docs/_static/get-started/face_id_enrollment_en.png)
 
@@ -69,11 +56,34 @@ The users can add/delete a Face ID after the network is successfully established
 
 Currently, ESP-EYE can enroll up to 10 Face IDs. Please note that the maximum number of enrolled Face IDs can be configured according to how users allocate the flash memory. However, we recommend a number that is no greater than 30.
 
-##### 5.2 Delete a Face ID
+#### 5 Uso de periféricos
 
-- Double-click the Side Tactile Button to delete an existing Face ID.
-- After that, the board deletes the earliest record of all the existing enrolled Face IDs. The white LED on the board flashes, and the browser displays: **XXX ID(S) LEFT**.
+- Después de añadir la cara a la "lista de miembros" el LED rojo comenzará a parpadear durante 10 segundos, en este tiempo el usuario debe decidir que cantidad de café quiere tomar, en esta versión del código hay 3 posibilidades dependiendo de cuantas veces has pulsado el botón lateral de la ESP-EYE:
+
+	-Café corto: Sin pulsar
+	-Café medio: Una pulsación
+	-Café largo: Dos pulsaciones
+
+- Si el usuario ha pulsado más de dos veces la cantidad se reinicia al valor mínimo (como si no se hubiese pulsado).
+
+- Cuando se vuelve a reconocer una cara que esté en la "lista de miembros" se echará la cantidad de café que el usuario haya prefijado.
+
+- Las cantidades de café están prefijadas en unos tiempos fijos de 20, 40 y 60 segundos respectivamente, si se quieren variar estos tiempos se debería ir al archivo app_httpserver.c en la carpeta main y dirigirse a la función cafeteame y cambiar los valores del vtask al tiempo que desee en milisegundos.
+
+- Se utilizan los pines Din y Cs, el primero como señal de salida y el segundo como tierra, el montaje que se realizó se muestra en la siguiente imagen.
+
+![Circuit image](../Circuit.png)
+
+- Se a utilizado, a parte de la ESP-EYE, dos resistencias con los valores indicados en la figura, un transistor 2N2222, una breadboard? y una cafetera Nespresso ? . Para que eché el café, se tienen que cortocircuitar los bornes del interruptor, que en este modelo de cafetera se ve en la siguiente imagen:
+
+![Switch image](../)
 
 #### Troubleshooting
 
 The board returns to the "awaiting to be woken up" status when there are network anomalies, such as "network disconnection" and "network timeout".
+
+#### Diagrama de flujo
+
+Un resumen del proceso de este sistema sería el siguiente:
+
+![DF image](../Esp_cafetera_2.jpeg)
