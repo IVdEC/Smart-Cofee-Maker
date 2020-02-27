@@ -53,8 +53,11 @@ Currently, ESP-EYE can enroll up to 10 Face IDs. Please note that the maximum nu
 - Después de añadir la cara a la "lista de miembros" el LED rojo comenzará a parpadear durante 10 segundos, en este tiempo el usuario debe decidir que cantidad de café quiere tomar, en esta versión del código hay 3 posibilidades dependiendo de cuantas veces has pulsado el botón lateral de la ESP-EYE:
 
 	-Café corto: Sin pulsar
+	
 	-Café medio: Una pulsación
+	
 	-Café largo: Dos pulsaciones
+	
 
 - Si el usuario ha pulsado más de dos veces la cantidad se reinicia al valor mínimo (como si no se hubiese pulsado).
 
