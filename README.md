@@ -9,6 +9,7 @@ Both folders contain the necessary codes to make a smart coffee maker with the E
 
 Read the readme of each folder for more information.
 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 Es necesario, para hacer que funcione el entorno de desarrollo para estos dos proyectos, haber seguido las instrucciones del readme del siguiente repositorio:
 
