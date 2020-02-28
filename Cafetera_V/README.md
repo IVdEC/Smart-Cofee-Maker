@@ -90,7 +90,7 @@ The board returns to the "awaiting to be woken up" status when there are network
 
 A summary of the process of this system would be the following:
 
-![DF image](../Images/Esp_cafetera_2.jpeg)
+![DF image](../Images/diagram_en.jpeg)
 
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
