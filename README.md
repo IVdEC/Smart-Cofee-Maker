@@ -18,3 +18,12 @@ https://github.com/espressif/esp-who
 Ambas carpetas contienen los códigos necesarios para hacer una cafetera inteligente con la placa Esp-Eye que reconoce detecta y almacena rostros.
 
 Leer el readme de cada carpeta para más información.
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Anotaciones:
+La aplicación permite modificar tanto la contraseña como el usuario del WiFi y la IP donde se aloja, en nuestro caso fue:
+Nombre de Usuario: esp-eye-9c26
+Contraseña: esp_cafetera_19
+IP: 192.168.6.1/face_stream
